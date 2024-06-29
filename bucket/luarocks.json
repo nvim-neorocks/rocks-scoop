@@ -10,7 +10,8 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LV \"5.1\" /P $dir/luarocks /F}\""
+                    "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LUA $lua /P $dir/luarocks /F}\""
                 ]
             }
         },
@@ -26,7 +27,7 @@
     },
     "pre_install": [
         "$file = 'config.lua'",
-        "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
+        "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
         "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
         "$v2 = $v1 -replace \"[.]\", ''",
         "$rocks = \"$(versiondir 'luarocks' 'current' $global)\\rocks\" -replace \"\\\\\", \"/\"",
