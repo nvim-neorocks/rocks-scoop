@@ -17,7 +17,8 @@
         }
     },
     "pre_install": [
-        "cmd.exe /C luarocks-3.11.1-win32/install.bat /LV 5.1",
+        "cd luarocks-3.11.1-win32",
+        "cmd.exe /C install.bat /LV 5.1",
         "$file = 'config.lua'",
         "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
         "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
