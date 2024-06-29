@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "nvim-neorocks/scoop:main"
+    [String]$upstream = "nvim-neorocks/rocks-scoop:main"
 )
 
 if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
