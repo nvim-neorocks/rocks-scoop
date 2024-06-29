@@ -11,7 +11,7 @@
             "extract_dir": "luarocks-3.11.1-win32",
             "installer": {
                 "script": [
-                    "install.bat /LV 5.1"
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; ./install.bat /LV 5.1 }\""
                 ]
             }
         },
@@ -21,7 +21,7 @@
             "extract_dir": "luarocks-3.11.1-win32",
             "installer": {
                 "script": [
-                    "install.bat /LV 5.1"
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; ./install.bat /LV 5.1 }\""
                 ]
             }
         }
