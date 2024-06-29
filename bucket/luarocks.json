@@ -46,8 +46,7 @@
     ],
     "bin": [
         "luarocks\\luarocks.bat",
-        "luarocks\\luarocks-admin.bat",
-        "lua5.1.exe"
+        "luarocks\\luarocks-admin.bat"
     ],
     "env_add_path": "rocks\\bin",
     "env_set": {
