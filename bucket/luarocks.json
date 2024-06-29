@@ -17,7 +17,7 @@
         }
     },
     "pre_install": [
-        "install.bat /LV 5.1",
+        "cmd.exe /C install.bat /LV 5.1",
         "$file = 'config.lua'",
         "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
         "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
