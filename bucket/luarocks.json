@@ -10,7 +10,7 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./luarocks-3.11.1-win32/install.bat /LV 5.1 }\""
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./install.bat /LV 5.1 }\""
                 ]
             }
         },
@@ -19,7 +19,7 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./luarocks-3.11.1-win32/install.bat /LV 5.1 }\""
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./install.bat /LV 5.1 }\""
                 ]
             }
         }
@@ -62,7 +62,7 @@
                 "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-64.zip",
                 "installer": {
                     "script": [
-                        "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./luarocks-$version-win32/install.bat /LV 5.1 }\""
+                        "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./install.bat /LV 5.1 }\""
                     ]
                 }
             },
@@ -70,7 +70,7 @@
                 "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-32.zip",
                 "installer": {
                     "script": [
-                        "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./luarocks-$version-win32/install.bat /LV 5.1 }\""
+                        "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir; ./install.bat /LV 5.1 }\""
                     ]
                 }
             }
