@@ -3,13 +3,14 @@
     "description": "The package manager for Lua modules",
     "homepage": "https://luarocks.org",
     "license": "MIT",
+    "depends": "lua51",
     "architecture": {
         "64bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /L /P $dir/luarocks /F}\""
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LV \"5.1\" /P $dir/luarocks /F}\""
                 ]
             }
         },
@@ -23,6 +24,26 @@
             }
         }
     },
+    "pre_install": [
+        "$file = 'config.lua'",
+        "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
+        "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
+        "$v2 = $v1 -replace \"[.]\", ''",
+        "$rocks = \"$(versiondir 'luarocks' 'current' $global)\\rocks\" -replace \"\\\\\", \"/\"",
+        "if (!(Test-Path \"$persist_dir\\$file\")) {",
+        "   Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
+        "   $CONT = @(",
+        "       \"rocks_trees = { `\"$rocks`\" }\"",
+        "       \"lua_interpreter = `\"lua$v2.exe`\"\"",
+        "       \"lua_version = `\"$v1`\"\"",
+        "       'variables = {'",
+        "       \"  LUA_BINDIR = `\"$lua`\",\"",
+        "       \"  LUA_DIR = `\"$lua`\"\"",
+        "       '}'",
+        "   )",
+        "   Set-Content \"$dir\\$file\" ($CONT -join \"`r`n\") -Encoding Ascii",
+        "}"
+    ],
     "bin": [
         "luarocks\\luarocks.bat",
         "luarocks\\luarocks-admin.bat"
@@ -31,6 +52,10 @@
     "env_set": {
         "LUAROCKS_CONFIG": "$dir\\config.lua"
     },
+    "persist": [
+        "config.lua",
+        "rocks"
+    ],
     "checkver": {
         "url": "https://luarocks.github.io/luarocks/releases/",
         "regex": "luarocks-([\\d.]+)-windows"
