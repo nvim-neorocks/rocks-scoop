@@ -6,17 +6,18 @@
     "depends": "lua51",
     "architecture": {
         "64bit": {
-            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-windows-64.zip",
-            "hash": "c71dba3d03e12305e9ccd022c621c8869aba3d124d9249e214aed5c16f3682a3",
-            "extract_dir": "luarocks-3.11.1-windows-64"
+            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
+            "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
+            "extract_dir": "luarocks-3.11.1-win32"
         },
         "32bit": {
-            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-windows-32.zip",
-            "hash": "44c7034d720a3767df964683722bd303311db9dabed11773dafbfa96add2eda7",
-            "extract_dir": "luarocks-3.11.1-windows-32"
+            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
+            "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
+            "extract_dir": "luarocks-3.11.1-win32"
         }
     },
     "pre_install": [
+        "install.bat /LV 5.1",
         "$file = 'config.lua'",
         "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
         "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
@@ -50,17 +51,17 @@
     ],
     "checkver": {
         "url": "https://luarocks.github.io/luarocks/releases/",
-        "regex": "luarocks-([\\d.]+)-windows"
+        "regex": "luarocks-([\\d.]+)-win32"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-64.zip",
-                "extract_dir": "luarocks-$version-windows-64"
+                "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-win32.zip",
+                "extract_dir": "luarocks-$version-win32"
             },
             "32bit": {
-                "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-32.zip",
-                "extract_dir": "luarocks-$version-windows-32"
+                "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-win32.zip",
+                "extract_dir": "luarocks-$version-win32"
             }
         }
     }
