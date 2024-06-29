@@ -9,7 +9,7 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /L /P $dir /F}\""
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /L /P $dir/luarocks /F}\""
                 ]
             }
         },
@@ -44,8 +44,8 @@
         "}"
     ],
     "bin": [
-        "luarocks.exe",
-        "luarocks-admin.exe",
+        "luarocks\\luarocks.exe",
+        "luarocks\\luarocks-admin.exe",
         "lua5.1.exe"
     ],
     "env_add_path": "rocks\\bin",
