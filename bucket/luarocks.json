@@ -61,7 +61,7 @@
     ],
     "checkver": {
         "url": "https://luarocks.github.io/luarocks/releases/",
-        "regex": "luarocks-([\\d.]+)-windows"
+        "regex": "luarocks-([\\d.]+)-win32"
     },
     "autoupdate": {
         "architecture": {
