@@ -8,7 +8,7 @@
         "64bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
-            "extract_dir": "luarocks-3.11.1-windows-32",
+            "extract_dir": "luarocks-3.11.1-win32",
             "installer": {
                 "script": [
                     "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-3.11.1-win32\\install.bat /LV 5.1' }\""
@@ -18,7 +18,7 @@
         "32bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
-            "extract_dir": "luarocks-3.11.1-windows-32",
+            "extract_dir": "luarocks-3.11.1-win32",
             "installer": {
                 "script": [
                     "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-3.11.1-win32\\install.bat /LV 5.1' }\""
@@ -62,7 +62,7 @@
         "architecture": {
             "64bit": {
                 "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-64.zip",
-                "extract_dir": "luarocks-$version-windows-32",
+                "extract_dir": "luarocks-$version-win32",
                 "installer": {
                     "script": [
                         "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-$version-win32\\install.bat /LV 5.1' }\""
@@ -71,7 +71,7 @@
             },
             "32bit": {
                 "url": "https://luarocks.github.io/luarocks/releases/luarocks-$version-windows-32.zip",
-                "extract_dir": "luarocks-$version-windows-32",
+                "extract_dir": "luarocks-$version-win32",
                 "installer": {
                     "script": [
                         "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-$version-win32\\install.bat /LV 5.1' }\""
