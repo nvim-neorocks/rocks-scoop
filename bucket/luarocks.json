@@ -10,6 +10,7 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
+                    "dir $dir",
                     "Expand-Archive \"$dir\\luarocks-3.11.1-win32.zip\" \"$dir\" -Force",
                     "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-3.11.1-win32\\install.bat /LV 5.1' }\""
                 ]
@@ -20,6 +21,7 @@
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
+                    "dir $dir",
                     "Expand-Archive \"$dir\\luarocks-3.11.1-win32.zip\" \"$dir\" -Force",
                     "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Invoke-Expression -Command '.\\luarocks-3.11.1-win32\\install.bat /LV 5.1' }\""
                 ]
