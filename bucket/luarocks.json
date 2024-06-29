@@ -6,17 +6,18 @@
     "depends": "lua51",
     "architecture": {
         "64bit": {
-            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-windows-64.zip",
+            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "c71dba3d03e12305e9ccd022c621c8869aba3d124d9249e214aed5c16f3682a3",
-            "extract_dir": "luarocks-3.11.1-windows-64"
+            "extract_dir": "luarocks-3.11.1-win32"
         },
         "32bit": {
-            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-windows-32.zip",
+            "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "44c7034d720a3767df964683722bd303311db9dabed11773dafbfa96add2eda7",
-            "extract_dir": "luarocks-3.11.1-windows-32"
+            "extract_dir": "luarocks-3.11.1-win32"
         }
     },
     "pre_install": [
+        "install.bat /LV 5.1",
         "$file = 'config.lua'",
         "$lua = (versiondir 'lua' 'current' $global) -replace \"\\\\\", '/'",
         "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
