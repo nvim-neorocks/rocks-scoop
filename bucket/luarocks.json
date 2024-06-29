@@ -3,6 +3,7 @@
     "description": "The package manager for Lua modules",
     "homepage": "https://luarocks.org",
     "license": "MIT",
+    "depends": "lua51",
     "architecture": {
         "64bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
