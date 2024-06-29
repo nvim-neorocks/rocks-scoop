@@ -8,12 +8,22 @@
         "64bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
-            "extract_dir": "luarocks-3.11.1-win32"
+            "extract_dir": "luarocks-3.11.1-win32",
+            "installer": {
+                "script": [
+                    "install.bat /LV 5.1"
+                ]
+            }
         },
         "32bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
-            "extract_dir": "luarocks-3.11.1-win32"
+            "extract_dir": "luarocks-3.11.1-win32",
+            "installer": {
+                "script": [
+                    "install.bat /LV 5.1"
+                ]
+            }
         }
     },
     "pre_install": [
@@ -35,16 +45,6 @@
         "   )",
         "   Set-Content \"$dir\\$file\" ($CONT -join \"`r`n\") -Encoding Ascii",
         "}"
-    ],
-    "install": [
-        {
-            "cmd": "install.bat",
-            "args": ["/LV", "5.1"]
-        }
-    ],
-    "bin": [
-        "luarocks.exe",
-        "luarocks-admin.exe"
     ],
     "env_add_path": "rocks\\bin",
     "env_set": {
