@@ -3,14 +3,14 @@
     "description": "The package manager for Lua modules",
     "homepage": "https://luarocks.org",
     "license": "MIT",
-    "depends": "lua51",
+    "depends": "main/luajit",
     "architecture": {
         "64bit": {
             "url": "https://luarocks.github.io/luarocks/releases/luarocks-3.11.1-win32.zip",
             "hash": "d5fb16455ad58c0f22621876d9c9f618216997e582f018a39008dd804daa0a85",
             "installer": {
                 "script": [
-                    "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
+                    "$lua = (versiondir 'main/luajit' 'current' $global) -replace \"\\\\\", '/'",
                     "dir $lua",
                     "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LUA $lua /LIB $lua /BIN $lua /P $dir/luarocks /F /Q}\""
                 ]
@@ -28,16 +28,14 @@
     },
     "pre_install": [
         "$file = 'config.lua'",
-        "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
-        "$v1 = (Select-CurrentVersion 'lua' $global) -replace \"^(\\d.\\d).*\", '$1'",
-        "$v2 = $v1 -replace \"[.]\", ''",
+        "$lua = (versiondir 'main/luajit' 'current' $global) -replace \"\\\\\", '/'",
         "$rocks = \"$(versiondir 'luarocks' 'current' $global)\\rocks\" -replace \"\\\\\", \"/\"",
         "if (!(Test-Path \"$persist_dir\\$file\")) {",
         "   Write-Host 'File' $file 'does not exists. Creating.' -f Yellow",
         "   $CONT = @(",
         "       \"rocks_trees = { `\"$rocks`\" }\"",
-        "       \"lua_interpreter = `\"lua$v2.exe`\"\"",
-        "       \"lua_version = `\"$v1`\"\"",
+        "       \"lua_interpreter = `\"luajit.exe`\"\"",
+        "       \"lua_version = `\"5.1`\"\"",
         "       'variables = {'",
         "       \"  LUA_BINDIR = `\"$lua`\",\"",
         "       \"  LUA_DIR = `\"$lua`\"\"",
