@@ -11,8 +11,7 @@
             "installer": {
                 "script": [
                     "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
-                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LUA $lua /LIB $lua /BIN $lua /P $dir/luarocks /F /Q}\"",
-                    "dir $lua"
+                    "powershell -ExecutionPolicy Bypass -Command \"& { Set-ExecutionPolicy -Scope Process Bypass; Set-Location $dir\\luarocks-3.11.1-win32; ./install.bat /LUA $lua /LIB $lua /BIN $lua /P $dir/luarocks /F /Q}\""
                 ]
             }
         },
@@ -26,6 +25,11 @@
             }
         }
     },
+    "post_install": [
+        "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
+        "dir $lua",
+        "luarocks config variables.LUA_LIBDIR $lua"
+    ],
     "bin": [
         "luarocks\\luarocks.bat",
         "luarocks\\luarocks-admin.bat"
