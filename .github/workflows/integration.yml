@@ -11,10 +11,10 @@ jobs:
     runs-on: windows-2019
     steps:
 
-      # - name: Install C/C++ Compiler
-      #   uses: rlalik/setup-cpp-compiler@master
-      #   with:
-      #     compiler: clang-latest
+      - name: Install C/C++ Compiler
+        uses: rlalik/setup-cpp-compiler@master
+        with:
+          compiler: clang-latest
 
       - name: Install MSVC Compiler Toolchain
         uses: ilammy/msvc-dev-cmd@v1
