@@ -30,21 +30,10 @@ jobs:
         run: |
           scoop install neorocks-scoop/luarocks
 
-      # - name: Configure luarocks
-      #   run: |
-      #     lua -v
-      #     luarocks config lua_version 5.1
-      #     luarocks config variables.LUA C:\Users\runneradmin\scoop\apps\lua51\current\lua5.1.exe
-
       - name: Install tree-sitter CLI
         uses: baptiste0928/cargo-install@v3
         with:
           crate: tree-sitter-cli
-
-      # - name: Install build dependencies
-      #   run: |
-      #     luarocks --local --lua-version=5.1 install luafilesystem --server='https://nvim-neorocks.github.io/rocks-binaries/'
-      #     luarocks --local --lua-version=5.1 install luarocks-build-treesitter-parser --server='https://nvim-neorocks.github.io/rocks-binaries/'
 
       - name: Install tree-sitter parser
         run: |
