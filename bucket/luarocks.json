@@ -28,7 +28,6 @@
     },
     "post_install": [
         "$lua = (versiondir 'lua51' 'current' $global) -replace \"\\\\\", '/'",
-        "dir $lua",
         "luarocks config variables.LUA_LIBDIR $lua",
         "luarocks config lua_version '5.1'"
     ],
