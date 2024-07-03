@@ -1,6 +1,6 @@
 # :ice_cream: rocks-scoop :ice_cream:
 
-[`scoop.sh`](https://scoop.sh/) buckets for use with rocks.nvim.
+[`scoop.sh`](https://scoop.sh/) buckets for use with [rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) and [lazy.nvim](https://github.com/folke/lazy.nvim) on Windows.
 
 > [!WARNING]
 >
