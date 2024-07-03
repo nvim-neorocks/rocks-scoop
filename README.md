@@ -1,4 +1,4 @@
-# Scoop Bucket
+# :ice_cream: rocks-scoop :ice_cream:
 
 [`scoop.sh`](https://scoop.sh/) buckets for use with rocks.nvim.
 
@@ -9,12 +9,17 @@
 >
 > We don't know how well it will work on your machine.
 
-## Buckets
+## :bucket: Included buckets
 
 - lua 5.1 + C libraries
 - luarocks
 
-## Usage
+## :pencil: Requirements
+
+- [Scoop](https://scoop.sh/)
+- A [Microsoft C/C++ compiler](https://learn.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=msvc-170)
+
+## :inbox_tray: Installation
 
 ```sh
 scoop bucket add neorocks-scoop https://github.com/nvim-neorocks/rocks-scoop.git
